@@ -39,14 +39,15 @@ class UsersController extends AppController {
     function logout() {
         $this->redirect($this->Auth->logout());
     }
-
+         
     function register() {
         if (!empty($this->data)) {
+           
             $this->User->create();
             if ($this->User->save($this->data)) {
                 $this->Session->setFlash("Account created!");
                 $this->redirect('/events');
-            }
+            }else $this->Session->setFlash("Something went wrong, try again : ( . . .");
         }
     }
 

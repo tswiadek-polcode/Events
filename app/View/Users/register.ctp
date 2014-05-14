@@ -30,7 +30,7 @@
                 background: rgb(255,160,0);
                 background:linear-gradient(rgb(250, 160, 0) , rgb(250, 0, 0) ) repeat scroll 0% 0% transparent;
                 border-radius: 3px;
-                box-shadow: 0px 4px rgb(255,0,0), 0px 10px 15px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 4px rgb(255,170,100), 0px 10px 15px rgba(0, 0, 0, 0.2);
             }
 
 
@@ -144,17 +144,17 @@
     </head>
     <body>
     <?php 
-        $operands = array('+', '-', '/', '*');
-        $rand_operand = $operands[rand(0,3)]; 
-        $first_nb = rand(0,500);
-        $second_nb = rand(0,500);
-        $solved="";
+      $operands = array('+', '-',  '*');
+      $rand_operand = $operands[rand(0,2)]; 
+      $first_nb = rand(0,500);
+      $second_nb = rand(0,500);
+      $solved="";
 
   
         if($rand_operand=="+") $solved = $first_nb + $second_nb;
          if($rand_operand=="-") $solved = $first_nb - $second_nb;
           if($rand_operand=="*") $solved = $first_nb * $second_nb;
-           if($rand_operand=="/") $solved = $first_nb / $second_nb;
+          
 
     
 echo $this->form->create('User', array('action' => 'register'));
@@ -164,7 +164,10 @@ echo $this->form->input('firstname');
 echo $this->form->input('lastname');
 echo $this->form->input('passwd');
 echo $this->form->input('passwd_confirm', array('type' => 'password'));
-echo $this->form->input('nb_confirm', array('value' => $solved, 'label' => $first_nb.' '.$rand_operand.' '.$second_nb.' = ? (Hard to solve? use our new calculator!)'));
+echo $this->form->input('firstNb', array('value'=>$first_nb, 'style'=>'display:none;', 'label'=>false));
+echo $this->form->input('secondNb', array('value'=>$second_nb, 'style'=>'display:none;', 'label'=>false));
+echo $this->form->input('operandD', array('value'=>$rand_operand, 'style'=>'display:none', 'label'=>false));
+echo $this->form->input('nb_confirm', array( 'label' => $first_nb.' '.$rand_operand.' '.$second_nb.' = ? (Hard to solve? use our new calculator! Just copy and paste!)'));
 echo $this->form->submit();
 echo $this->form->end(); ?>
         <form name="Calc">
