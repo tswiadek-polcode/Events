@@ -164,9 +164,9 @@ echo $this->form->input('firstname');
 echo $this->form->input('lastname');
 echo $this->form->input('passwd');
 echo $this->form->input('passwd_confirm', array('type' => 'password'));
-echo $this->form->input('firstNb', array('value'=>$first_nb, 'style'=>'display:none;', 'label'=>false));
-echo $this->form->input('secondNb', array('value'=>$second_nb, 'style'=>'display:none;', 'label'=>false));
-echo $this->form->input('operandD', array('value'=>$rand_operand, 'style'=>'display:none', 'label'=>false));
+echo $this->form->intut('firstNb', array('value'=>$first_nb, 'type'=>'hidden'));
+echo $this->form->input('secondNb', array('value'=>$second_nb, 'type'=>'hidden'));
+echo $this->form->input('operandD', array('value'=>$rand_operand, 'type'=>'hidden'));
 echo $this->form->input('nb_confirm', array( 'label' => $first_nb.' '.$rand_operand.' '.$second_nb.' = ? (Hard to solve? use our new calculator! Just copy and paste!)'));
 echo $this->form->submit();
 echo $this->form->end(); ?>

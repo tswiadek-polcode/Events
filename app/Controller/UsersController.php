@@ -46,7 +46,7 @@ class UsersController extends AppController {
             $this->User->create();
             if ($this->User->save($this->data)) {
                 $this->Session->setFlash("Account created!");
-                $this->redirect('/events');
+                $this->redirect('/events/index');
             }else $this->Session->setFlash("Something went wrong, try again : ( . . .");
         }
     }

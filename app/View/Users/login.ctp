@@ -1,4 +1,6 @@
+
 <?php
+ echo '<a href="http://localhost/events/events">BEK PLIS!</a>';
 $this->session->flash('auth');
 echo $this->form->create('User', array('action' => 'login'));
 echo $this->form->input('username');
