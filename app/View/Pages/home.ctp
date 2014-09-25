@@ -73,7 +73,7 @@ endif;
 		endif;
 	?>
 </p>
-<p>
+<p> 
 	<?php
 		$filePresent = null;
 		if (file_exists(APP . 'Config' . DS . 'database.php')):

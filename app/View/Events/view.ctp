@@ -3,9 +3,9 @@
     $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)]; ?>
 
     <div style="width:80%; height:auto; padding-bottom: 10px; padding-top: 10px; background-color:<?php echo $color; ?>; margin-left:auto; margin-right:auto;">
-<a href="http://localhost/events/events" > <h1 style="background-color:<?php echo  "#987123"?>;">Wróć do strony głównej</h1> </a>
-<h1 style="font-size:28px; text-align: center; background-color:<?php echo "#fff221" ?>;"><?php echo h($event['Event']['name']); ?></h1>
+        <a href="http://localhost/events/events" > <h1 style="background-color:<?php echo  "#987123"?>;">Wróć do strony głównej</h1> </a>
+        <h1 style="font-size:28px; text-align: center; background-color:<?php echo "#fff221" ?>;"><?php echo h($event['Event']['name']); ?></h1>
 
-<p style="font-size:18px; text-align: center; background-color:<?php echo "#ff2599" ?>;"><?php echo h($event['Event']['description']); ?></p>
-</div>
+        <p style="font-size:18px; text-align: center; background-color:<?php echo "#ff2599" ?>;"><?php echo h($event['Event']['description']); ?></p>
+    </div>
 </div>

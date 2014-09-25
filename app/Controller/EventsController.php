@@ -19,6 +19,17 @@ class EventsController extends AppController{
         }
         $this->set('event', $event);
     }
+    
+    function addEvent(){
+         if (!empty($this->data)) {
+           
+            $this->Event->create();
+            if ($this->Event->save($this->data)) {
+                $this->Session->setFlash("Event Created!");
+                $this->redirect('/events/index');
+            }else $this->Session->setFlash("Something went wrong, try again : ( . . .");
+        }
+    }
 
 }
 

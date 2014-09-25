@@ -60,16 +60,59 @@ class User extends AppModel {
                 'rule' => array('maxLength', 30),
                 'message' => 'Last name must be fewer than 30 characters'
             )
+        ),
+        'nb_confirm' => array(
+          'rule' => 'validateNbConfirm',
+            'message' => 'Please solve the equation.'
+          
+        ),
+        
+        'firstNb' => array(
+         'rule' => 'notEmpty'
+        ),
+        'secondNb' => array(
+          'rule' => 'notEmpty'
+        ),
+        'operandD' => array(
+          'rule' => 'notEmpty'
+      
         )
     );
+    
+         
+
 
     function validatePasswdConfirm($data) {
         if ($this->data['User']['passwd'] !== $data['passwd_confirm']) {
             return false;
-        }
-        return true;
+        }else return true;
     }
 
+    
+    function validateNbConfirm($data){
+        if (!empty($this->data['User']['nb_confirm']) ){
+            echo 'Its not empty so its good';
+              if($this->data['User']['operandD'] == '+'){
+                   echo 'got +';
+               if($this->data['User']['nb_confirm'] != $this->data['User']['firstNb']+$this->data['User']['secondNb']){
+                   return false;
+               }else return true;
+           }
+            if($this->data['User']['operandD'] == '-'){
+                 echo 'got -';
+               if($this->data['User']['nb_confirm'] != $this->data['User']['firstNb']-$this->data['User']['secondNb']){
+                   return false;
+               }else return true;
+           }
+            if($this->data['User']['operandD'] == '*'){
+                 echo 'got *';
+               if($this->data['User']['nb_confirm'] != $this->data['User']['firstNb']*$this->data['User']['secondNb']){
+                   return false;
+               }else return true;
+           }
+        
+        }else return false;
+    }
     function beforeSave( $options = array()) {
         if (isset($this->data['User']['passwd'])) {
             $this->data['User']['password'] = Security::hash($this->data['User']['passwd'], null, true);
