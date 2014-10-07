@@ -51,6 +51,12 @@ class User extends AppModel {
                 'message' => 'First name must be fewer than 30 characters'
             )
         ),
+          'birthday' => array(
+            'required' => array(
+                'rule' => 'notEmpty',
+                'message' => 'Please enter your birthdate.'
+            )
+        ),
         'lastname' => array(
             'required' => array(
                 'rule' => 'notEmpty',
