@@ -39,4 +39,14 @@ class AppController extends Controller {
   $this->Auth->loginAction = array('admin' => false, 'controller' => 'users', 'action' => 'login');
   $this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'index'); 
  } */
+    
+    public $components = array(
+    'Auth' => array(
+        'authenticate' => array(
+            'Form' => array(
+                'fields' => array('username' => array('username', 'email'),'password' => 'password')
+            )
+        )
+    )
+);
 }

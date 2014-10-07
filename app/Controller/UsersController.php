@@ -18,11 +18,28 @@ class UsersController extends AppController {
     function index() {
         
     }
-
+/* Nowy login... troche potestowac trzeba..
+ * public function login() {
+if($this->request->is('post')) {
+App::Import('Utility', 'Validation');
+if( isset($this->data['User']['username']) &&
+Validation::email($this->data['User']['username'])) {
+$this->request->data['User']['email'] = $this->data['User']['username'];
+$this->Auth->authenticate['Form'] = array('fields' =>
+array('username' => 'email'));
+}
+if(!$this->Auth->login()) {
+$this->Session->setFlash(__('Invalid username or password, try again'));
+} else {
+$this->redirect($this->Auth->redirect());
+}
+}
+}
+ */
     function login() {
            //if already logged-in, redirect
         if($this->Session->check('Auth.User')){
-            $this->redirect(array('action' => '../events'));     
+            $this->redirect(array('action' => './events'));     // cofamy na strone glowna
         }
          
         // if we get the post information, try to authenticate
