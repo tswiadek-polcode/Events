@@ -8,3 +8,62 @@ and open the template in the editor.
     Author     : tswiadek
 */
 
+.navbar-inverse{
+    background: #93d17f; /* Old browsers */
+background: -moz-linear-gradient(-45deg,  #93d17f 0%, #6fc166 40%, #42aa42 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right bottom, color-stop(0%,#93d17f), color-stop(40%,#6fc166), color-stop(100%,#42aa42)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(-45deg,  #93d17f 0%,#6fc166 40%,#42aa42 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(-45deg,  #93d17f 0%,#6fc166 40%,#42aa42 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(-45deg,  #93d17f 0%,#6fc166 40%,#42aa42 100%); /* IE10+ */
+background: linear-gradient(135deg,  #93d17f 0%,#6fc166 40%,#42aa42 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#93d17f', endColorstr='#42aa42',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+.navbar-inverse .navbar-nav > .active > a{
+    background-color:#6fc166;
+    color: #FFF;
+    border-left:solid #ffffff 3px;
+    border-right:solid #ffffff 3px;
+}
+
+.navbar, .navbar-inverse{
+    min-height:40px;
+    border: none;
+    color: #FFF;
+    //padding-bottom:0px;
+}
+
+.navbar-header .navbar-brand{ 
+    color: #FFF; 
+    font-family: Impact, Charcoal, sans-serif; 
+    font-style:italic;
+    font-size:20px;
+    padding-bottom:60px;
+   
+}
+
+.navbar-inverse .navbar-nav > li > a{
+        color: #FFF; 
+
+    font-size:17px;
+}
+
+
+body{
+  
+}
+
+.container{
+    
+
+    background-color: rgba(57, 211, 44, 0.1);
+    background: rgba(57, 211, 44, 0.1);
+    color: rgba(57, 211, 44, 0.7);
+
+
+}
+
+.navbar, .navbar-inverse{
+    margin-bottom:0px;
+}
