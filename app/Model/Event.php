@@ -7,5 +7,11 @@
  */
 
 class Event extends AppModel{
+   /* var $creatorInfo = array( 'User' => array(
+        'foreignKey'=> 'ID'
+    ) ); */
     
+   public $belongsTo = array ( 'User' => array (
+        'foreignKey'=>'creator_id'
+    )) ;
 }

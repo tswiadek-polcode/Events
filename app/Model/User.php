@@ -1,7 +1,14 @@
 <?php
 
 class User extends AppModel {
-
+     /*    public $hasOne = array(
+            'User' => array(
+                'className'=>'User',
+                'foreignKey'=>'ID'
+            )
+        ); */
+    
+    var $hasMany =  'Event';
     var $name = 'User';
     var $useTable = 'users';
     var $validate = array(
@@ -24,7 +31,7 @@ class User extends AppModel {
                 'message' => 'Please Enter your email.'
             )
         ),
-        'passwd' => array(
+        'password' => array(
             'min' => array(
                 'rule' => array('minLength', 6),
                 'message' => 'Usernames must be at least 6 characters.'
@@ -34,10 +41,10 @@ class User extends AppModel {
                 'message' => 'Please enter a password.'
             ),
         ),
-        'passwd_confirm' => array(
+        'password_confirm' => array(
             'required' => 'notEmpty',
             'match' => array(
-                'rule' => 'validatePasswdConfirm',
+                'rule' => 'validatePasswordConfirm',
                 'message' => 'Passwords do not match'
             )
         ),
@@ -88,8 +95,8 @@ class User extends AppModel {
          
 
 
-    function validatePasswdConfirm($data) {
-        if ($this->data['User']['passwd'] !== $data['passwd_confirm']) {
+    function validatePasswordConfirm($data) {
+        if ($this->data['User']['password'] !== $data['password_confirm']) {
             return false;
         }else return true;
     }
@@ -120,13 +127,13 @@ class User extends AppModel {
         }else return false;
     }
     function beforeSave( $options = array()) {
-        if (isset($this->data['User']['passwd'])) {
-            $this->data['User']['password'] = Security::hash($this->data['User']['passwd'], null, true);
-            unset($this->data['User']['passwd']);
+        if (isset($this->data['User']['password'])) {
+            $this->data['User']['password'] = Security::hash($this->data['User']['password'], null, true);
+            unset($this->data['User']['password']);
         }
 
-        if (isset($this->data['User']['passwd_confirm'])) {
-            unset($this->data['User']['passwd_confirm']);
+        if (isset($this->data['User']['password_confirm'])) {
+            unset($this->data['User']['password_confirm']);
         }
 
         return true;

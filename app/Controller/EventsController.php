@@ -2,13 +2,19 @@
 
 class EventsController extends AppController{
     public $helpers = array('Html', 'Form');
+
     public function index(){
         $this->set('events', $this->Event->find('all', array(
             'order' => 'RAND()',
             'limit' => 4
         )));
     }
+
      public function view($id = null) {
+        //$this->Event->User->Behaviors->load('Containable');
+         // event has one creator;
+  
+        
         if (!$id) {
             throw new NotFoundException(__('Invalid event'));
         }
@@ -26,7 +32,7 @@ class EventsController extends AppController{
             $this->Event->create();
             if ($this->Event->save($this->data)) {
                 $this->Session->setFlash("Event Created!");
-                $this->redirect('/events/index');
+                $this->redirect('../');
             }else $this->Session->setFlash("Something went wrong, try again : ( . . .");
         }
     }

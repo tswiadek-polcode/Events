@@ -96,7 +96,7 @@ class MysqlTest extends CakeTestCase {
 			'`MysqlTestModel`.`client_id`',
 			'`MysqlTestModel`.`name`',
 			'`MysqlTestModel`.`login`',
-			'`MysqlTestModel`.`passwd`',
+			'`MysqlTestModel`.`password`',
 			'`MysqlTestModel`.`addr_1`',
 			'`MysqlTestModel`.`addr_2`',
 			'`MysqlTestModel`.`zip_code`',

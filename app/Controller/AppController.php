@@ -40,7 +40,7 @@ class AppController extends Controller {
   $this->Auth->loginRedirect = array('controller' => 'users', 'action' => 'index'); 
  } */
     
-    public $components = array(
+ /*   public $components = array(
     'Auth' => array(
         'authenticate' => array(
             'Form' => array(
@@ -48,5 +48,5 @@ class AppController extends Controller {
             )
         )
     )
-);
+); */
 }
