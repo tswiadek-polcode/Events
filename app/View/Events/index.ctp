@@ -3,17 +3,7 @@
 $rand = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f');
 $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)]; ?>
 <div id="navbar" style="width:100%; text-align:right;">
-<?php if($this->Session->check('Auth.User')){
-   
-     echo $this->Html->link( "Add your NEW EVENT!",   array('controller' => 'events', 'action'=>'addEvent') );
-     echo " ";
-    echo $this->Html->link( "Logout",   array('controller' => 'users', 'action'=>'logout') );
-    echo "<br>";
-    }else{
-        echo '<a href="http://localhost/events/users/register"> Register </a>
-        <a href="http://localhost/events/users/login"> Login </a> ';
-    }
-?>
+
 </div>
 
 <h1 style="text-align:center; margin-left:auto; margin-right:auto; font-size:32px; font-family: Impact, Charcoal, sans-serif; font-style:italic; color:<?php echo $color; ?>;;">SOME RANDOM EVENTS YOU MUST SEE!</h1>

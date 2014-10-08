@@ -12,7 +12,7 @@
         echo $this->form->input('date_from');
         echo $this->form->input('date_to');
         echo $this->form->intut('creator_id', array('value'=>''.$this->Session->read('Auth.User.ID').'', 'type'=>'hidden'));
-        echo $this->form->input('eventType', array('private'=>'Private', 'public'=>'Public'));
+        echo $this->form->input('eventType', array('type'=>'select', 'options'=> array(  'private'=>'Private', 'public'=>'Public') ));
         echo $this->form->submit();
         echo $this->form->end(); 
     ?>
