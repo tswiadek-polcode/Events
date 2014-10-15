@@ -67,3 +67,19 @@ body{
 .navbar, .navbar-inverse{
     margin-bottom:0px;
 }
+
+.row{
+    background:#FFF;
+}
+
+#flashMsg > a{
+    width:150px;
+    //background:red;
+    float:left;
+    padding:20px;
+    border-radius: 10px;
+    background: rgba(169, 3, 41, 1);
+    position:relative;
+    color:white;
+    text-decoration: none;
+}

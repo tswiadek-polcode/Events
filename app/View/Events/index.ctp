@@ -7,10 +7,10 @@ $color = '#'.$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,15)].$rand[rand(0,
 
 </div>
 
-<h1 style="text-align:center; margin-left:auto; margin-right:auto; font-size:32px; font-family: Impact, Charcoal, sans-serif; font-style:italic; color:<?php echo $color; ?>;;">SOME RANDOM EVENTS YOU MUST SEE!</h1>
+<h1 style="margin-top:0px; background:#42aa42; text-align:center; margin-left:auto; margin-right:auto; font-size:32px; font-family: Impact, Charcoal, sans-serif; font-style:italic; color:<?php echo $color; ?>;;"><?php echo $this->Html->image("casper.png", array('style'=>'width:30px; height:30px;'));?> NiQa CASPER SHOW YOU SOME RANDOM EVENTS YOU MUST SEE!</h1>
 
 <!-- Here is where we loop through our $posts array, printing out post info -->
-<div style="margin-left:20px;margin-right:20px;  background:white">
+<div style="margin-left:20px;margin-right:20px;">
     <?php foreach ($events as $event): ?>
     <div style="float:left;margin-left:25px;">
         <div style="float:left;"><?php echo $this->Html->link($event['Event']['name'],
